@@ -1,75 +1,58 @@
-**Week 4: MERN Stack Integration Project**
+# MERN Task Manager
 
-**Objective:**
+MERN Task Manager is a full-stack web application built using the MERN stack. The application allows users to create, read, update, and delete tasks. It features a RESTful API built with Express and MongoDB on the backend and a modern, responsive React frontend created with Vite and styled using Tailwind CSS.
 
-- Develop a full-stack web application using the MERN stack.
-- Apply backend and frontend integration skills.
-- Practice RESTful API development and consumption.
-- Implement CRUD operations and proper project structuring.
+## Table of Contents
 
-**Project Suggestion:** Build a "Task Manager" application where users can create, read, update, and delete tasks. Each task should include fields like title, description, status, and due date.
+- [Overview](#overview)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+  - [Backend Setup](#backend-setup)
+  - [Frontend Setup](#frontend-setup)
+- [API Endpoints](#api-endpoints)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [Testing](#testing)
+- [Technologies Used](#technologies-used)
+- [License](#license)
 
-**Instructions:**
+## Overview
 
-1. **Setup the Project:**
-   - Create a new project folder called `mern-task-manager`.
-   - Initialize both backend and frontend directories within the project.
-   - Install necessary dependencies such as Express, Mongoose, React, and Axios.
+The MERN Task Manager provides a simple way to manage tasks by performing CRUD (Create, Read, Update, Delete) operations. This project integrates both backend and frontend components and demonstrates the use of RESTful API design, state management with React hooks, and modern styling with Tailwind CSS.
 
-2. **Backend Development:**
-   - Set up an Express server and connect to MongoDB.
-   - Create a `Task` model with the following fields:
-     - `title` (String, required)
-     - `description` (String)
-     - `status` (String, default: 'pending', enum: ['pending', 'in progress', 'completed'])
-     - `dueDate` (Date)
-   - Implement RESTful API routes to:
-     - Create a new task
-     - Retrieve all tasks
-     - Update a task by ID
-     - Delete a task by ID
-   - Use environment variables for database connection.
+## Features
 
-3. **Frontend Development:**
-   - Set up a React project and configure routing.
-   - Create components:
-     - `TaskList` to display all tasks.
-     - `TaskForm` to add or update tasks.
-     - `TaskItem` to show an individual task.
-   - Implement forms to capture task details.
-   - Use Axios to make API requests to the backend.
-   - Implement UI styling using Tailwind CSS.
+- **Task Creation:** Add new tasks with a title, description, status, and due date.
+- **Task Listing:** View all tasks in a responsive, easy-to-read format.
+- **Task Editing:** Update task details including status and due date.
+- **Task Deletion:** Remove tasks from the list.
+- **Responsive UI:** Styled using Tailwind CSS for a modern look.
+- **RESTful API:** Backend built with Express and connected to a MongoDB database.
 
-4. **State Management:**
-   - Use React's `useState` and `useEffect` hooks to manage task state.
-   - Handle user interactions such as adding, updating, and deleting tasks.
+## Project Structure
 
-5. **Testing:**
-   - Run the backend server and test API endpoints using Postman.
-   - Run the React app and ensure API calls work correctly.
-   - Verify CRUD operations.
-
-6. **Project Deployment:**
-   - Deploy the backend to a cloud platform such as Render.
-   - Deploy the frontend to Vercel.
-   - Ensure proper connection between frontend and backend.
-
-7. **Documentation:**
-   - Write a `README.md` file including:
-     - Project overview
-     - Installation steps
-     - API endpoint documentation
-     - Features and usage guide
-
-8. **Submission:**
-   - Push your project to your GitHub repository.
-
-**Evaluation Criteria:**
-
-- Proper project setup and folder structuring.
-- Working CRUD operations in both frontend and backend.
-- Correct use of React state and hooks.
-- Well-structured API endpoints with appropriate error handling.
-- A functional and user-friendly UI with Tailwind CSS.
-- Clear and concise documentation.
-
+```plaintext
+mern-task-manager/
+├── backend
+│   ├── models
+│   │   └── Task.js
+│   ├── routes
+│   │   └── taskRoutes.js
+│   ├── server.js
+│   ├── package.json
+│   └── .env
+└── frontend
+    ├── index.html
+    ├── package.json
+    ├── postcss.config.cjs  // or postcss.config.js with ES module syntax
+    ├── tailwind.config.js
+    ├── vite.config.js
+    └── src
+        ├── index.css
+        ├── main.jsx
+        ├── App.jsx
+        └── components
+            ├── TaskForm.jsx
+            ├── TaskItem.jsx
+            └── TaskList.jsx
